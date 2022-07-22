@@ -33,11 +33,6 @@
         var script_url = "https://script.google.com/macros/s/AKfycbyPyS-v6bZtxLtvTyFWzw7ltvLDqZjC2UZADuBV4T1bDu23spkBHn9cI7KPK6oGXAkkVg/exec";
         
         var url = script_url+"?action=read";
-          var jumlah = 0;
-          var nollima= 0;
-          var enamsebelas=0;
-          var duabelasduatiga=0;
-          var duaempatlimasembilan=0;
       
           $.getJSON(url, function (json) {
        
@@ -103,22 +98,12 @@
           tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].rbasisebelum+"</div>";
           tabCell = tr.insertCell(-1);
           tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].rbasisekarang+"</div>"; //////////////////
-          jumlah = jumlah + 1;
-          if(json.records[i].usiasekarang<5){
-            nollima= nollima+1;
-          }else if(json.records[i].usiasekarang<11){
-            enamsebelas=enamsebelas+1;
-          }else if(json.records[i].usiasekarang<23){
-            duabelasduatiga=duabelasduatiga+1;
-          }else if(json.records[i].usiasekarang<59){
-            duaempatlimasembilan=duaempatlimasembilan+1;
-          }
                   }
               }
             } 
               
               var divContainer = document.getElementById("showData");
-              divContainer.innerHTML = "<div class='fs-6'>Jumlah data: "+jumlah+" Anak<br>Anak umur 0-5 bulan: "+nollima+"<br>Anak umur 6-11 bulan: "+enamsebelas+"<br>Anak umur 12-23 bulan: "+duabelasduatiga+"<br>Anak umur 24-59 bulan: "+duaempatlimasembilan+"</div>";
+              divContainer.innerHTML = "";
               divContainer.appendChild(table);
        
            $("#NIK").val("")
