@@ -111,92 +111,122 @@
         }
 
         var url = script_url+"?action=read";
-      
+          var l05s= 0;
+          var p05s= 0;
+          var l611s= 0;
+          var p611s= 0;
+          var l1223s= 0;
+          var p1223s= 0;
+          var l2459s= 0;
+          var p2459s= 0;
+          var l05d= 0;
+          var p05d= 0;
+          var l611d= 0;
+          var p611d= 0;
+          var l1223d= 0;
+          var p1223d= 0;
+          var l2459d= 0;
+          var p2459d= 0;
+          var l05nimbang= 0;
+          var p05nimbang= 0;
+          var l611nimbang= 0;
+          var p611nimbang= 0;
+          var l1223nimbang= 0;
+          var p1223nimbang= 0;
+          var l2459nimbang= 0;
+          var p2459nimbang= 0;
+          var l05n= 0;
+          var p05n= 0;
+          var l611n= 0;
+          var p611n= 0;
+          var l1223n= 0;
+          var p1223n= 0;
+          var l2459n= 0;
+          var p2459n= 0;
+          var l05t= 0;
+          var p05t= 0;
+          var l611t= 0;
+          var p611t= 0;
+          var l1223t= 0;
+          var p1223t= 0;
+          var l2459t= 0;
+          var p2459t= 0;
+          var l05o= 0;
+          var p05o= 0;
+          var l611o= 0;
+          var p611o= 0;
+          var l1223o= 0;
+          var p1223o= 0;
+          var l2459o= 0;
+          var p2459o= 0;
+          var l05b= 0;
+          var p05b= 0;
+          var l611b= 0;
+          var p611b= 0;
+          var l1223b= 0;
+          var p1223b= 0;
+          var l2459b= 0;
+          var p2459b= 0;
+          var l05b= 0;
+          var p05b= 0;
+          var l611b= 0;
+          var p611b= 0;
+          var l1223b= 0;
+          var p1223b= 0;
+          var l2459b= 0;
+          var p2459b= 0;
           $.getJSON(url, function (json) {
-       
-      // buat tabel yang menampilkan data
-        var table = document.createElement("table");
-        table.setAttribute("id", "myTable");
-        var header = table.createTHead();
-        var row = header.insertRow(0);     
-        var cell1 = row.insertCell(0);
-        var cell2 = row.insertCell(1);
-        var cell3 = row.insertCell(2);
-        var cell4 = row.insertCell(3);
-        var cell5 = row.insertCell(4);
-        var cell6 = row.insertCell(5);
-        var cell7 = row.insertCell(6);
-        var cell8 = row.insertCell(7)
-        var cell9 = row.insertCell(8);
-        var cell10 = row.insertCell(9);
-        var cell11 = row.insertCell(10);
-        var cell12 = row.insertCell(11);;//////////////////
-       
-        cell1.innerHTML = "<b><div class='text-center pd-1'>NIK</div></b>";
-        cell2.innerHTML = "<b><div class='text-center pd-1'>Nama</div></b>";
-        cell3.innerHTML = "<b><div class='text-center pd-1'>Usia Sebelumnya</div></b>";
-        cell4.innerHTML = "<b><div class='text-center pd-1'>Usia Saat Ini</div></b>";
-        cell5.innerHTML = "<b><div class='text-center pd-1'>Berat Sebelumnya</div></b>";
-        cell6.innerHTML = "<b><div class='text-center pd-1'>Berat Saat Ini</div></b>";
-        cell7.innerHTML = "<b><div class='text-center pd-1'>Tinggi Sebelumnya</div></b>";
-        cell8.innerHTML = "<b><div class='text-center pd-1'>Tinggi Saat Ini</div></b>";
-        cell9.innerHTML = "<b><div class='text-center pd-1'>RBBB Gizi Sebelumnya</div></b>";
-        cell10.innerHTML = "<b><div class='text-center pd-1'>RBBB Gizi Saat Ini</div></b>";
-        cell11.innerHTML = "<b><div class='text-center pd-1'>RB ASI Sebelumnya</div></b>";
-        cell12.innerHTML = "<b><div class='text-center pd-1'>RB ASI Saat Ini</div></b>";//////////////////
-              
       //        alert(json.records);
            // masukkan data ke dalam tabel
             if (srchb!=''){
               for (var i = 0; i < json.records.length; i++) {
+                if(json.records[i].usiasekarang!=''&&json.records[i].usiasekarang!='-'){
                 
                 if(srchb==json.records[i].bulan&&srcht==json.records[i].tahun){
-                  tr = table.insertRow(-1);
-          var tabCell = tr.insertCell(-1);
-          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].nikanak+"</div>";
-          tabCell = tr.insertCell(-1);
-          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].namaanak+"</div>";
-          tabCell = tr.insertCell(-1);
-          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].usiasebelum+"</div>";
-          tabCell = tr.insertCell(-1);
-          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].usiasekarang+"</div>";
-          tabCell = tr.insertCell(-1);
-          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].bbsebelum+"</div>";
-          tabCell = tr.insertCell(-1);
-          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].bbsekarang+"</div>";
-          tabCell = tr.insertCell(-1);
-          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].tinggisebelum+"</div>";
-          tabCell = tr.insertCell(-1);
-          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].tinggisekarang+"</div>";
-          tabCell = tr.insertCell(-1);
-          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].rbbbsebelum+"</div>";
-          tabCell = tr.insertCell(-1);
-          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].rbbbsekarang+"</div>";
-          tabCell = tr.insertCell(-1);
-          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].rbasisebelum+"</div>";
-          tabCell = tr.insertCell(-1);
-          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].rbasisekarang+"</div>"; //////////////////
+                  if(json.records[i].usiasekarang<=5&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")){
+                    l05s=l05s+1;
+                  }else if(json.records[i].usiasekarang<=5&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")){
+                    p05s=p05s+1;
+                  }else if(json.records[i].usiasekarang<=11&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")){
+                    l611s=l611s+1;
+                  }else if(json.records[i].usiasekarang<=11&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")){
+                    p611s=p611s+1;
+                  }else if(json.records[i].usiasekarang<=23&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")){
+                    l1223s=l1223s+1;
+                  }else if(json.records[i].usiasekarang<=23&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")){
+                    p1223s=p1223s+1;
+                  }else if(json.records[i].usiasekarang<=59&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")){
+                    l2459s=l2459s+1;
+                  }else if(json.records[i].usiasekarang<=59&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")){
+                    p2459s=p2459s+1;
                   }
+                  if(json.records[i].usiasekarang<=5&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
+                    l05d=l05d+1;
+                  }else if(json.records[i].usiasekarang<=5&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
+                    p05d=p05d+1;
+                  }else if(json.records[i].usiasekarang<=11&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
+                    l611d=l611d+1;
+                  }else if(json.records[i].usiasekarang<=11&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
+                    p611d=p611d+1;
+                  }else if(json.records[i].usiasekarang<=23&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
+                    l1223d=l1223d+1;
+                  }else if(json.records[i].usiasekarang<=23&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
+                    p1223d=p1223d+1;
+                  }else if(json.records[i].usiasekarang<=59&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
+                    l2459d=l2459d+1;
+                  }else if(json.records[i].usiasekarang<=59&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
+                    p2459d=p2459d+1;
+                  }
+                }
+                }
               }
             } 
               
               var divContainer = document.getElementById("showData");
-              divContainer.innerHTML = "";
+              divContainer.innerHTML = "<table class='table table-bordered ps-2 text-center'><tr><td rowspan='3'>No</td><td rowspan='3'>Uraian Kegiatan</td><td colspan='8'>Kelompok Umur</td></tr><tr><td colspan='2'>0-5 Bulan</td><td colspan='2'>6-11 Bulan</td><td colspan='2'>12-23 Bulan</td><td colspan='2'>24-59 Bulan</td></tr><tr><td>L</td><td>P</td><td>L</td><td>P</td><td>L</td><td>P</td><td>L</td><td>P</td></tr><tr><td>1</td><td>Jumlah Bayi (S)</td><td>"+l05s+"</td><td>"+p05s+"</td><td>"+l611s+"</td><td>"+p611s+"</td><td>"+l1223s+"</td><td>"+p1223s+"</td><td>"+l2459s+"</td><td>"+p2459s+"</td></tr><tr><td>2</td><td>Jumlah Bayi Yang Memiliki KMS (K)</td><td>"+l05s+"</td><td>"+p05s+"</td><td>"+l611s+"</td><td>"+p611s+"</td><td>"+l1223s+"</td><td>"+p1223s+"</td><td>"+l2459s+"</td><td>"+p2459s+"</td></tr><tr><td>3</td><td>Jumlah Bayi Ditimbang (D)</td><td>"+l05d+"</td><td>"+p05d+"</td><td>"+l611d+"</td><td>"+p611d+"</td><td>"+l1223d+"</td><td>"+p1223d+"</td><td>"+l2459d+"</td><td>"+p2459d+"</td></tr><tr><td rowspan='5'>4</td><td>Hasil Penimbangan Sesuai Rambu Gizi</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>N (Naik)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>T (Tidak Naik)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><tr><td>O (Bulan Lalu Tidak Datang Menimbang)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>B (Baru Pertama Kali Datang Menimbang)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>5</td><td>Jumlah Balita Bawah Garis Merah (BGM)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>6</td><td>Jumlah Balita BGM yang di Rujuk ke Puskesmas</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td>Jumlah Balita Atas Pita Hijau (APH)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>8</td><td>Jumlah Balita APH yang di Rujuk ke Puskesmas</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>9</td><td>Jumlah Bayi yang Tidak Naik Berat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>10</td><td>Jumlah Bayi yang Tidak Naik Berat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>";
               divContainer.appendChild(table);
        
-           $("#NIK").val("")
-           $("#Nama").val("")
-           $("#Usia Sebelumnya").val("")
-           $("#Usia Saat Ini").val("")
-           $("#Berat Sebelumnya").val("")
-           $("#Berat Saat Ini").val("")
-           $("#Tinggi Sebelumnya").val("")
-           $("#Tinggi Saat Ini").val("")
-           $("#RBBB Gizi Sebelumnya").val("")
-           $("#RBBB Gizi Saat Ini").val("")
-           $("#RB ASI Sebelumnya").val("")
-           $("#RB ASI Saat Ini").val("")
-            getData2Input();///////////////////
+            getData2Input();///////////////////s
           });
        }
         </script>
@@ -209,7 +239,7 @@
           ><img src="../img/logo.png" width="35" />&emsp;Kelurahan Semper Timur</a
         >
         <div class="navbar-text">
-          <a href="../Form1Penimbangan/index.html"><button type="button" class="btn btn-success">Lihat Rincian</button></a>
+          <a href="../Tampil/index.html"><button type="button" class="btn btn-success">Lihat Rincian</button></a>
           <a href="../index.html"><button type="button" class="btn btn-danger">Logout</button></a>
         </div>
         </div>
