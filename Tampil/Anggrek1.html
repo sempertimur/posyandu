@@ -28,7 +28,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script>
   
-      function read_value(srchb,srcht) {
+      function read_value(srchb='',srcht='',srchn='') {
                 
         var script_url = "https://script.google.com/macros/s/AKfycbyRxGFO1pj_7Xm_kFYbkliyKo_NV-PTZ99SbVq-gRF_vM5rKrY5j6tyqUpLomvyuR7J5Q/exec";
         
@@ -36,7 +36,7 @@
           var url = script_url+"?action=read";
       
           $.getJSON(url, function (json) {
-       
+       if (srchb!=''){
       // buat tabel yang menampilkan data
         var table = document.createElement("table");
         table.setAttribute("id", "myTable");
@@ -120,6 +120,100 @@
            $("#RB ASI Sebelumnya").val("")
            $("#RB ASI Saat Ini").val("")
             getData2Input();///////////////////
+          }else{
+            var table = document.createElement("table");
+        table.setAttribute("id", "myTable");
+        var header = table.createTHead();
+        var row = header.insertRow(0);     
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        var cell8 = row.insertCell(7)
+        var cell9 = row.insertCell(8);
+        var cell10 = row.insertCell(9);
+        var cell11 = row.insertCell(10);
+        var cell12 = row.insertCell(11);
+        var cell13 = row.insertCell(12);
+        var cell14 = row.insertCell(13);;//////////////////
+       
+        cell1.innerHTML = "<b><div class='text-center pd-1'>NIK</div></b>";
+        cell2.innerHTML = "<b><div class='text-center pd-1'>Bulan</div></b>";
+        cell3.innerHTML = "<b><div class='text-center pd-1'>Tahun</div></b>";
+        cell4.innerHTML = "<b><div class='text-center pd-1'>Nama</div></b>";
+        cell5.innerHTML = "<b><div class='text-center pd-1'>Usia Sebelumnya</div></b>";
+        cell6.innerHTML = "<b><div class='text-center pd-1'>Usia Saat Ini</div></b>";
+        cell7.innerHTML = "<b><div class='text-center pd-1'>Berat Sebelumnya</div></b>";
+        cell8.innerHTML = "<b><div class='text-center pd-1'>Berat Saat Ini</div></b>";
+        cell9.innerHTML = "<b><div class='text-center pd-1'>Tinggi Sebelumnya</div></b>";
+        cell10.innerHTML = "<b><div class='text-center pd-1'>Tinggi Saat Ini</div></b>";
+        cell11.innerHTML = "<b><div class='text-center pd-1'>RBBB Gizi Sebelumnya</div></b>";
+        cell12.innerHTML = "<b><div class='text-center pd-1'>RBBB Gizi Saat Ini</div></b>";
+        cell13.innerHTML = "<b><div class='text-center pd-1'>RB ASI Sebelumnya</div></b>";
+        cell14.innerHTML = "<b><div class='text-center pd-1'>RB ASI Saat Ini</div></b>";//////////////////
+              
+      //        alert(json.records);
+           // masukkan data ke dalam tabel
+            if (srchn!=''){
+              for (var i = 0; i < json.records.length; i++) {
+                
+                if(srchn==json.records[i].nikanak){
+                  tr = table.insertRow(-1);
+          var tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].nikanak+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].bulan+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].tahun+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].namaanak+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].usiasebelum+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].usiasekarang+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].bbsebelum+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].bbsekarang+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].tinggisebelum+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].tinggisekarang+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].rbbbsebelum+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].rbbbsekarang+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].rbasisebelum+"</div>";
+          tabCell = tr.insertCell(-1);
+          tabCell.innerHTML = "<div class='text-center pd-1'>"+json.records[i].rbasisekarang+"</div>"; //////////////////
+                  }
+              }
+            } 
+              
+              var divContainer = document.getElementById("showData");
+              divContainer.innerHTML = "";
+              divContainer.appendChild(table);
+       
+           $("#NIK").val("")
+           $("Bulan").val("")
+           $("Tahun").val("")
+           $("#Nama").val("")
+           $("#Usia Sebelumnya").val("")
+           $("#Usia Saat Ini").val("")
+           $("#Berat Sebelumnya").val("")
+           $("#Berat Saat Ini").val("")
+           $("#Tinggi Sebelumnya").val("")
+           $("#Tinggi Saat Ini").val("")
+           $("#RBBB Gizi Sebelumnya").val("")
+           $("#RBBB Gizi Saat Ini").val("")
+           $("#RB ASI Sebelumnya").val("")
+           $("#RB ASI Saat Ini").val("")
+            getData2Input();///////////////////
+          }
           });
        }
         </script>
@@ -147,6 +241,7 @@
               Form 1
             </button></a
           >
+          <a href="../Home/Anggrek1.html"><button type="button" class="btn btn-success">Dashboard</button></a>
           <a href="../index.html"
             ><button type="button" class="btn btn-danger">Logout</button></a
           >
@@ -200,6 +295,14 @@
             <div class="">
                 <input type="button" class="btn btn-success" onclick="read_value($('#srchbulan').val(),$('#srchtahun').val())" value="Tampilkan"/>
             </div>
+          </div>
+        </div>
+        <div class="row pt-2">
+          <div class="col">
+            <input type="text" class="form-control" id="srchnik" name="srchnik" placeholder="Masukkan NIK Anak"/>
+          </div>
+          <div class="col">
+            <input type="button" class="btn btn-success" onclick="read_value('','',$('#srchnik').val())" value="Cari"/>
           </div>
         </div>
       </div>           
