@@ -119,6 +119,7 @@
           var p1223s= 0;
           var l2459s= 0;
           var p2459s= 0;
+          var jumlahs= 0;
           var l05d= 0;
           var p05d= 0;
           var l611d= 0;
@@ -127,6 +128,7 @@
           var p1223d= 0;
           var l2459d= 0;
           var p2459d= 0;
+          var jumlahd= 0;
           var l05nimbang= 0;
           var p05nimbang= 0;
           var l611nimbang= 0;
@@ -135,6 +137,7 @@
           var p1223nimbang= 0;
           var l2459nimbang= 0;
           var p2459nimbang= 0;
+          var jumlahnimbang= 0;
           var l05n= 0;
           var p05n= 0;
           var l611n= 0;
@@ -143,6 +146,7 @@
           var p1223n= 0;
           var l2459n= 0;
           var p2459n= 0;
+          var jumlahn= 0;
           var l05t= 0;
           var p05t= 0;
           var l611t= 0;
@@ -151,6 +155,7 @@
           var p1223t= 0;
           var l2459t= 0;
           var p2459t= 0;
+          var jumlaht= 0;
           var l05o= 0;
           var p05o= 0;
           var l611o= 0;
@@ -159,6 +164,7 @@
           var p1223o= 0;
           var l2459o= 0;
           var p2459o= 0;
+          var jumlaho= 0;
           var l05b= 0;
           var p05b= 0;
           var l611b= 0;
@@ -167,14 +173,7 @@
           var p1223b= 0;
           var l2459b= 0;
           var p2459b= 0;
-          var l05b= 0;
-          var p05b= 0;
-          var l611b= 0;
-          var p611b= 0;
-          var l1223b= 0;
-          var p1223b= 0;
-          var l2459b= 0;
-          var p2459b= 0;
+          var jumlahb= 0;
           $.getJSON(url, function (json) {
       //        alert(json.records);
            // masukkan data ke dalam tabel
@@ -220,10 +219,12 @@
                 }
                 }
               }
+              jumlahs=l05s+p05s+l611s+p611s+l1223s+p1223s+l2459s+p2459s;
+              jumlahd=l05d+p05d+l611d+p611d+l1223d+p1223d+l2459d+p2459d;
             } 
               
               var divContainer = document.getElementById("showData");
-              divContainer.innerHTML = "<table class='table table-bordered ps-2 text-center'><tr><td rowspan='3'>No</td><td rowspan='3'>Uraian Kegiatan</td><td colspan='8'>Kelompok Umur</td></tr><tr><td colspan='2'>0-5 Bulan</td><td colspan='2'>6-11 Bulan</td><td colspan='2'>12-23 Bulan</td><td colspan='2'>24-59 Bulan</td></tr><tr><td>L</td><td>P</td><td>L</td><td>P</td><td>L</td><td>P</td><td>L</td><td>P</td></tr><tr><td>1</td><td>Jumlah Bayi (S)</td><td>"+l05s+"</td><td>"+p05s+"</td><td>"+l611s+"</td><td>"+p611s+"</td><td>"+l1223s+"</td><td>"+p1223s+"</td><td>"+l2459s+"</td><td>"+p2459s+"</td></tr><tr><td>2</td><td>Jumlah Bayi Yang Memiliki KMS (K)</td><td>"+l05s+"</td><td>"+p05s+"</td><td>"+l611s+"</td><td>"+p611s+"</td><td>"+l1223s+"</td><td>"+p1223s+"</td><td>"+l2459s+"</td><td>"+p2459s+"</td></tr><tr><td>3</td><td>Jumlah Bayi Ditimbang (D)</td><td>"+l05d+"</td><td>"+p05d+"</td><td>"+l611d+"</td><td>"+p611d+"</td><td>"+l1223d+"</td><td>"+p1223d+"</td><td>"+l2459d+"</td><td>"+p2459d+"</td></tr><tr><td rowspan='5'>4</td><td>Hasil Penimbangan Sesuai Rambu Gizi</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>N (Naik)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>T (Tidak Naik)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><tr><td>O (Bulan Lalu Tidak Datang Menimbang)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>B (Baru Pertama Kali Datang Menimbang)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>5</td><td>Jumlah Balita Bawah Garis Merah (BGM)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>6</td><td>Jumlah Balita BGM yang di Rujuk ke Puskesmas</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td>Jumlah Balita Atas Pita Hijau (APH)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>8</td><td>Jumlah Balita APH yang di Rujuk ke Puskesmas</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>9</td><td>Jumlah Bayi yang Tidak Naik Berat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>10</td><td>Jumlah Bayi yang Tidak Naik Berat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>";
+              divContainer.innerHTML = "<table class='table table-bordered ps-2 text-center'><tr><td rowspan='3'>No</td><td rowspan='3'>Uraian Kegiatan</td><td colspan='8'>Kelompok Umur</td><td rowspan='3'>Jumlah</td></tr><tr><td colspan='2'>0-5 Bulan</td><td colspan='2'>6-11 Bulan</td><td colspan='2'>12-23 Bulan</td><td colspan='2'>24-59 Bulan</td></tr><tr><td>L</td><td>P</td><td>L</td><td>P</td><td>L</td><td>P</td><td>L</td><td>P</td></tr><tr><td>1</td><td>Jumlah Bayi (S)</td><td>"+l05s+"</td><td>"+p05s+"</td><td>"+l611s+"</td><td>"+p611s+"</td><td>"+l1223s+"</td><td>"+p1223s+"</td><td>"+l2459s+"</td><td>"+p2459s+"</td><td>"+jumlahs+"</td></tr><tr><td>2</td><td>Jumlah Bayi Yang Memiliki KMS (K)</td><td>"+l05s+"</td><td>"+p05s+"</td><td>"+l611s+"</td><td>"+p611s+"</td><td>"+l1223s+"</td><td>"+p1223s+"</td><td>"+l2459s+"</td><td>"+p2459s+"</td><td>"+jumlahs+"</td></tr><tr><td>3</td><td>Jumlah Bayi Ditimbang (D)</td><td>"+l05d+"</td><td>"+p05d+"</td><td>"+l611d+"</td><td>"+p611d+"</td><td>"+l1223d+"</td><td>"+p1223d+"</td><td>"+l2459d+"</td><td>"+p2459d+"</td><td>"+jumlahd+"</td></tr><tr><td rowspan='5'>4</td><td>Hasil Penimbangan Sesuai Rambu Gizi</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>N (Naik)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>T (Tidak Naik)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><tr><td>O (Bulan Lalu Tidak Datang Menimbang)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>B (Baru Pertama Kali Datang Menimbang)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>5</td><td>Jumlah Balita Bawah Garis Merah (BGM)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>6</td><td>Jumlah Balita BGM yang di Rujuk ke Puskesmas</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td>Jumlah Balita Atas Pita Hijau (APH)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>8</td><td>Jumlah Balita APH yang di Rujuk ke Puskesmas</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>9</td><td>Jumlah Bayi yang Tidak Naik Berat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>10</td><td>Jumlah Bayi yang Tidak Naik Berat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>";
               divContainer.appendChild(table);
        
             getData2Input();///////////////////s
