@@ -20,31 +20,42 @@
     <nav
       class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top"
     >
-      <div class="container-fluid">
+      <div class="container">
         <a class="navbar-brand fs-4"
-        ><img src="../img/logo.png" width="35" />&emsp;Kelurahan Semper Timur</a
-      >
-      <div class="navbar-text">
-        <a href="../BalitaHadir/KemalaBhayangkari.html"
-          ><button type="button" class="btn btn-success">
-            Form Balita Hadir
-          </button></a
+          ><img src="../img/logo.png" width="35" />&emsp;Kelurahan Semper
+          Timur</a
         >
-        <a href="../Form1Penimbangan/KemalaBhayangkari.html"
-          ><button type="button" class="btn btn-success">
-            Form 1
-          </button></a
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
         >
-        <a href="../Tampil/KemalaBhayangkari.html"
-          ><button type="button" class="btn btn-success">
-            Rekapitulasi Data
-            </button></a
-          >
-          <a href="../Home/KemalaBhayangkari.html"><button type="button" class="btn btn-success">Dashboard</button></a>
-          <a href="../index.html"
-            ><button type="button" class="btn btn-danger">Logout</button></a
-          >
-      </div>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../BalitaHadir/KemalaBhayangkari.html">Form Balita Hadir</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page">Form Balita Baru</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Tampil/KemalaBhayangkari.html">Rekapitulasi Data</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../Form1Penimbangan/KemalaBhayangkari.html">Form 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Logout</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </nav>
     <!-- Akhir Navbar -->
@@ -546,6 +557,32 @@
                     aria-describedby="tanggalmeninggal"
                     name="tanggalmeninggal"
                   />
+                </div>
+                <div class="mb-3">
+                  <label for="vitamin" class="form-label">Vitamin A</label>
+                  <select
+                    class="form-select form-select-sm"
+                    aria-label=".form-select-sm example"
+                    name="vitamin"
+                  >
+                    <option selected>Silahkan pilih vitamin A</option>
+                    <option
+                      value="biru"
+                      id="vitamin"
+                      aria-describedby="vitamin"
+                      name="vitamin"
+                    >
+                      Biru
+                    </option>
+                    <option
+                      value="merah"
+                      id="vitamin"
+                      aria-describedby="vitamin"
+                      name="vitamin"
+                    >
+                      Merah
+                    </option>
+                  </select>
                 </div>
                 <div class="mb-3">
                   <label for="verif" class="form-label"
