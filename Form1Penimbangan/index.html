@@ -16,15 +16,12 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-<style>
-  table, td{
-    border: 2px solid black;
-  }
-  </style>
-  </head>
-  <body>
-
+    <style>
+      table,
+      td {
+        border: 2px solid black;
+      }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script>
   
@@ -108,154 +105,355 @@
           var script_url = "https://script.google.com/macros/s/AKfycbyZqU4bQaV3re7ELrzxfT58EnnVMpQxdHzLviaTrlKYeAT_FXgVlN_kAcl4MOVY0H8Afw/exec";
         }else if(srchp=='tulip'){
           var script_url = "https://script.google.com/macros/s/AKfycbxkcLnL2ZrANjhxm3IyjUg7QnSqHlzr8UH2aK8dtFHr6bXpRN5IJLfNAbDGFF9BDbunZA/exec";
+        }else if(srchp=='seluruh'){
+          var script_url = "https://script.google.com/macros/s/AKfycbx3k0v5Q03B9Y9RNiL_U-A08Iy6PRJJchspabwObnIV62jD_vgwPL4p1u-mIvW9-ZNbTw/exec";
         }
 
-        var url = script_url+"?action=read";
-          var l05s= 0;
-          var p05s= 0;
-          var l611s= 0;
-          var p611s= 0;
-          var l1223s= 0;
-          var p1223s= 0;
-          var l2459s= 0;
-          var p2459s= 0;
-          var jumlahs= 0;
-          var l05d= 0;
-          var p05d= 0;
-          var l611d= 0;
-          var p611d= 0;
-          var l1223d= 0;
-          var p1223d= 0;
-          var l2459d= 0;
-          var p2459d= 0;
-          var jumlahd= 0;
-          var l05nimbang= 0;
-          var p05nimbang= 0;
-          var l611nimbang= 0;
-          var p611nimbang= 0;
-          var l1223nimbang= 0;
-          var p1223nimbang= 0;
-          var l2459nimbang= 0;
-          var p2459nimbang= 0;
-          var jumlahnimbang= 0;
-          var l05n= 0;
-          var p05n= 0;
-          var l611n= 0;
-          var p611n= 0;
-          var l1223n= 0;
-          var p1223n= 0;
-          var l2459n= 0;
-          var p2459n= 0;
-          var jumlahn= 0;
-          var l05t= 0;
-          var p05t= 0;
-          var l611t= 0;
-          var p611t= 0;
-          var l1223t= 0;
-          var p1223t= 0;
-          var l2459t= 0;
-          var p2459t= 0;
-          var jumlaht= 0;
-          var l05o= 0;
-          var p05o= 0;
-          var l611o= 0;
-          var p611o= 0;
-          var l1223o= 0;
-          var p1223o= 0;
-          var l2459o= 0;
-          var p2459o= 0;
-          var jumlaho= 0;
-          var l05b= 0;
-          var p05b= 0;
-          var l611b= 0;
-          var p611b= 0;
-          var l1223b= 0;
-          var p1223b= 0;
-          var l2459b= 0;
-          var p2459b= 0;
-          var jumlahb= 0;
-          $.getJSON(url, function (json) {
-      //        alert(json.records);
-           // masukkan data ke dalam tabel
-            if (srchb!=''){
-              for (var i = 0; i < json.records.length; i++) {
-                if(json.records[i].usiasekarang!=''&&json.records[i].usiasekarang!='-'){
-                
-                if(srchb==json.records[i].bulan&&srcht==json.records[i].tahun){
-                  if(json.records[i].usiasekarang<=5&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")){
-                    l05s=l05s+1;
-                  }else if(json.records[i].usiasekarang<=5&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")){
-                    p05s=p05s+1;
-                  }else if(json.records[i].usiasekarang<=11&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")){
-                    l611s=l611s+1;
-                  }else if(json.records[i].usiasekarang<=11&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")){
-                    p611s=p611s+1;
-                  }else if(json.records[i].usiasekarang<=23&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")){
-                    l1223s=l1223s+1;
-                  }else if(json.records[i].usiasekarang<=23&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")){
-                    p1223s=p1223s+1;
-                  }else if(json.records[i].usiasekarang<=59&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")){
-                    l2459s=l2459s+1;
-                  }else if(json.records[i].usiasekarang<=59&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")){
-                    p2459s=p2459s+1;
+        var url = script_url + "?action=read";
+        var l05s = 0;
+        var p05s = 0;
+        var jumlah05s = 0;
+        var l611s = 0;
+        var p611s = 0;
+        var jumlah611s = 0;
+        var l1223s = 0;
+        var p1223s = 0;
+        var jumlah1223s = 0;
+        var l2459s = 0;
+        var p2459s = 0;
+        var jumlah2459s = 0;
+        var jumlahs = 0;
+        var l05d = 0;
+        var p05d = 0;
+        var jumlah05d = 0;
+        var l611d = 0;
+        var p611d = 0;
+        var jumlah611d = 0;
+        var l1223d = 0;
+        var p1223d = 0;
+        var jumlah1223d = 0;
+        var l2459d = 0;
+        var p2459d = 0;
+        var jumlah2459d = 0;
+        var jumlahd = 0;
+        var l05n = 0;
+        var p05n = 0;
+        var l611n = 0;
+        var p611n = 0;
+        var l1223n = 0;
+        var p1223n = 0;
+        var l2459n = 0;
+        var p2459n = 0;
+        var jumlahn = 0;
+        var l05t = 0;
+        var p05t = 0;
+        var l611t = 0;
+        var p611t = 0;
+        var l1223t = 0;
+        var p1223t = 0;
+        var l2459t = 0;
+        var p2459t = 0;
+        var jumlaht = 0;
+        var l05o = 0;
+        var p05o = 0;
+        var l611o = 0;
+        var p611o = 0;
+        var l1223o = 0;
+        var p1223o = 0;
+        var l2459o = 0;
+        var p2459o = 0;
+        var jumlaho = 0;
+        var l05b = 0;
+        var p05b = 0;
+        var l611b = 0;
+        var p611b = 0;
+        var l1223b = 0;
+        var p1223b = 0;
+        var l2459b = 0;
+        var p2459b = 0;
+        var jumlahb = 0;
+        $.getJSON(url, function (json) {
+          //        alert(json.records);
+          // masukkan data ke dalam tabel
+          if (srchb != "") {
+            for (var i = 0; i < json.records.length; i++) {
+              if (
+                json.records[i].usiasekarang != "" &&
+                json.records[i].usiasekarang != "-"
+              ) {
+                if (
+                  srchb == json.records[i].bulan &&
+                  srcht == json.records[i].tahun
+                ) {
+                  if (
+                    json.records[i].usiasekarang <= 5 &&
+                    (json.records[i].kelamin == "LAKI - LAKI" ||
+                      json.records[i].kelamin == "Laki-Laki")
+                  ) {
+                    l05s = l05s + 1;
+                  } else if (
+                    json.records[i].usiasekarang <= 5 &&
+                    (json.records[i].kelamin == "PEREMPUAN" ||
+                      json.records[i].kelamin == "Perempuan")
+                  ) {
+                    p05s = p05s + 1;
+                  } else if (
+                    json.records[i].usiasekarang <= 11 &&
+                    (json.records[i].kelamin == "LAKI - LAKI" ||
+                      json.records[i].kelamin == "Laki-Laki")
+                  ) {
+                    l611s = l611s + 1;
+                  } else if (
+                    json.records[i].usiasekarang <= 11 &&
+                    (json.records[i].kelamin == "PEREMPUAN" ||
+                      json.records[i].kelamin == "Perempuan")
+                  ) {
+                    p611s = p611s + 1;
+                  } else if (
+                    json.records[i].usiasekarang <= 23 &&
+                    (json.records[i].kelamin == "LAKI - LAKI" ||
+                      json.records[i].kelamin == "Laki-Laki")
+                  ) {
+                    l1223s = l1223s + 1;
+                  } else if (
+                    json.records[i].usiasekarang <= 23 &&
+                    (json.records[i].kelamin == "PEREMPUAN" ||
+                      json.records[i].kelamin == "Perempuan")
+                  ) {
+                    p1223s = p1223s + 1;
+                  } else if (
+                    json.records[i].usiasekarang <= 59 &&
+                    (json.records[i].kelamin == "LAKI - LAKI" ||
+                      json.records[i].kelamin == "Laki-Laki")
+                  ) {
+                    l2459s = l2459s + 1;
+                  } else if (
+                    json.records[i].usiasekarang <= 59 &&
+                    (json.records[i].kelamin == "PEREMPUAN" ||
+                      json.records[i].kelamin == "Perempuan")
+                  ) {
+                    p2459s = p2459s + 1;
                   }
-                  if(json.records[i].usiasekarang<=5&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
-                    l05d=l05d+1;
-                  }else if(json.records[i].usiasekarang<=5&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
-                    p05d=p05d+1;
-                  }else if(json.records[i].usiasekarang<=11&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
-                    l611d=l611d+1;
-                  }else if(json.records[i].usiasekarang<=11&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
-                    p611d=p611d+1;
-                  }else if(json.records[i].usiasekarang<=23&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
-                    l1223d=l1223d+1;
-                  }else if(json.records[i].usiasekarang<=23&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
-                    p1223d=p1223d+1;
-                  }else if(json.records[i].usiasekarang<=59&&(json.records[i].kelamin=="LAKI - LAKI"||json.records[i].kelamin=="Laki-Laki")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
-                    l2459d=l2459d+1;
-                  }else if(json.records[i].usiasekarang<=59&&(json.records[i].kelamin=="PEREMPUAN"||json.records[i].kelamin=="Perempuan")&&json.records[i].bbsekarang!=''&&json.records[i].bbsekarang!='-'){
-                    p2459d=p2459d+1;
+                  if (
+                    json.records[i].usiasekarang <= 5 &&
+                    (json.records[i].kelamin == "LAKI - LAKI" ||
+                      json.records[i].kelamin == "Laki-Laki") &&
+                    json.records[i].bbsekarang != "" &&
+                    json.records[i].bbsekarang != "-"
+                  ) {
+                    l05d = l05d + 1;
+                  } else if (
+                    json.records[i].usiasekarang <= 5 &&
+                    (json.records[i].kelamin == "PEREMPUAN" ||
+                      json.records[i].kelamin == "Perempuan") &&
+                    json.records[i].bbsekarang != "" &&
+                    json.records[i].bbsekarang != "-"
+                  ) {
+                    p05d = p05d + 1;
+                  } else if (
+                    json.records[i].usiasekarang <= 11 &&
+                    (json.records[i].kelamin == "LAKI - LAKI" ||
+                      json.records[i].kelamin == "Laki-Laki") &&
+                    json.records[i].bbsekarang != "" &&
+                    json.records[i].bbsekarang != "-"
+                  ) {
+                    l611d = l611d + 1;
+                  } else if (
+                    json.records[i].usiasekarang <= 11 &&
+                    (json.records[i].kelamin == "PEREMPUAN" ||
+                      json.records[i].kelamin == "Perempuan") &&
+                    json.records[i].bbsekarang != "" &&
+                    json.records[i].bbsekarang != "-"
+                  ) {
+                    p611d = p611d + 1;
+                  } else if (
+                    json.records[i].usiasekarang <= 23 &&
+                    (json.records[i].kelamin == "LAKI - LAKI" ||
+                      json.records[i].kelamin == "Laki-Laki") &&
+                    json.records[i].bbsekarang != "" &&
+                    json.records[i].bbsekarang != "-"
+                  ) {
+                    l1223d = l1223d + 1;
+                  } else if (
+                    json.records[i].usiasekarang <= 23 &&
+                    (json.records[i].kelamin == "PEREMPUAN" ||
+                      json.records[i].kelamin == "Perempuan") &&
+                    json.records[i].bbsekarang != "" &&
+                    json.records[i].bbsekarang != "-"
+                  ) {
+                    p1223d = p1223d + 1;
+                  } else if (
+                    json.records[i].usiasekarang <= 59 &&
+                    (json.records[i].kelamin == "LAKI - LAKI" ||
+                      json.records[i].kelamin == "Laki-Laki") &&
+                    json.records[i].bbsekarang != "" &&
+                    json.records[i].bbsekarang != "-"
+                  ) {
+                    l2459d = l2459d + 1;
+                  } else if (
+                    json.records[i].usiasekarang <= 59 &&
+                    (json.records[i].kelamin == "PEREMPUAN" ||
+                      json.records[i].kelamin == "Perempuan") &&
+                    json.records[i].bbsekarang != "" &&
+                    json.records[i].bbsekarang != "-"
+                  ) {
+                    p2459d = p2459d + 1;
                   }
-                }
                 }
               }
-              jumlahs=l05s+p05s+l611s+p611s+l1223s+p1223s+l2459s+p2459s;
-              jumlahd=l05d+p05d+l611d+p611d+l1223d+p1223d+l2459d+p2459d;
-            } 
-              
-              var divContainer = document.getElementById("showData");
-              divContainer.innerHTML = "<table class='table table-bordered ps-2 text-center'><tr><td rowspan='3'>No</td><td rowspan='3'>Uraian Kegiatan</td><td colspan='8'>Kelompok Umur</td><td rowspan='3'>Jumlah</td></tr><tr><td colspan='2'>0-5 Bulan</td><td colspan='2'>6-11 Bulan</td><td colspan='2'>12-23 Bulan</td><td colspan='2'>24-59 Bulan</td></tr><tr><td>L</td><td>P</td><td>L</td><td>P</td><td>L</td><td>P</td><td>L</td><td>P</td></tr><tr><td>1</td><td>Jumlah Bayi (S)</td><td>"+l05s+"</td><td>"+p05s+"</td><td>"+l611s+"</td><td>"+p611s+"</td><td>"+l1223s+"</td><td>"+p1223s+"</td><td>"+l2459s+"</td><td>"+p2459s+"</td><td>"+jumlahs+"</td></tr><tr><td>2</td><td>Jumlah Bayi Yang Memiliki KMS (K)</td><td>"+l05s+"</td><td>"+p05s+"</td><td>"+l611s+"</td><td>"+p611s+"</td><td>"+l1223s+"</td><td>"+p1223s+"</td><td>"+l2459s+"</td><td>"+p2459s+"</td><td>"+jumlahs+"</td></tr><tr><td>3</td><td>Jumlah Bayi Ditimbang (D)</td><td>"+l05d+"</td><td>"+p05d+"</td><td>"+l611d+"</td><td>"+p611d+"</td><td>"+l1223d+"</td><td>"+p1223d+"</td><td>"+l2459d+"</td><td>"+p2459d+"</td><td>"+jumlahd+"</td></tr><tr><td rowspan='5'>4</td><td>Hasil Penimbangan Sesuai Rambu Gizi</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>N (Naik)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>T (Tidak Naik)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><tr><td>O (Bulan Lalu Tidak Datang Menimbang)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>B (Baru Pertama Kali Datang Menimbang)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>5</td><td>Jumlah Balita Bawah Garis Merah (BGM)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>6</td><td>Jumlah Balita BGM yang di Rujuk ke Puskesmas</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td>Jumlah Balita Atas Pita Hijau (APH)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>8</td><td>Jumlah Balita APH yang di Rujuk ke Puskesmas</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>9</td><td>Jumlah Bayi yang Tidak Naik Berat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>10</td><td>Jumlah Bayi yang Tidak Naik Berat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>";
-              divContainer.appendChild(table);
-       
-            getData2Input();///////////////////s
-          });
-       }
-        </script>
+            }
+            jumlahs =
+              l05s + p05s + l611s + p611s + l1223s + p1223s + l2459s + p2459s;
+            jumlahd =
+              l05d + p05d + l611d + p611d + l1223d + p1223d + l2459d + p2459d;
+            jumlah05s = l05s + p05s;
+            jumlah611s = l611s + p611s;
+            jumlah1223s = l1223s + p1223s;
+            jumlah2459s = l2459s + p2459s;
+            jumlah05d = l05d + p05d;
+            jumlah611d = l611d + p611d;
+            jumlah1223d = l1223d + p1223d;
+            jumlah2459d = l2459d + p2459d;
+          }
 
-    <nav
-        class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top"
-      >
-        <div class="container-fluid">
-          <a class="navbar-brand fs-4"
-          ><img src="../img/logo.png" width="35" />&emsp;Kelurahan Semper Timur</a
-        >
-        <div class="navbar-text">
-          <a href="../Tampil/index.html"><button type="button" class="btn btn-success">Lihat Rincian</button></a>
-          <a href="../index.html"><button type="button" class="btn btn-danger">Logout</button></a>
-        </div>
-        </div>
-      </nav>
+          var divContainer = document.getElementById("showData");
+          divContainer.innerHTML =
+            "<table class='table table-bordered ps-2 text-center'><tr><td rowspan='3'>No</td><td rowspan='3'>Uraian Kegiatan</td><td colspan='12'>Kelompok Umur</td><td rowspan='3'>Jumlah Keseluruhan</td></tr><tr><td colspan='3'>0-5 Bulan</td><td colspan='3'>6-11 Bulan</td><td colspan='3'>12-23 Bulan</td><td colspan='3'>24-59 Bulan</td></tr><tr><td>L</td><td>P</td><td>jumlah</td><td>L</td><td>P</td><td>jumlah</td><td>L</td><td>P</td><td>jumlah</td><td>L</td><td>P</td><td>jumlah</td></tr><tr><td>1</td><td>Jumlah Bayi (S)</td><td>" +
+            l05s +
+            "</td><td>" +
+            p05s +
+            "</td><td>" +
+            jumlah05s +
+            "</td><td>" +
+            l611s +
+            "</td><td>" +
+            p611s +
+            "</td><td>" +
+            jumlah611s +
+            "</td><td>" +
+            l1223s +
+            "</td><td>" +
+            p1223s +
+            "</td><td>" +
+            jumlah1223s +
+            "</td><td>" +
+            l2459s +
+            "</td><td>" +
+            p2459s +
+            "</td><td>" +
+            jumlah2459s +
+            "</td><td>" +
+            jumlahs +
+            "</td></tr><tr><td>2</td><td>Jumlah Bayi Yang Memiliki KMS (K)</td><td>" +
+            l05s +
+            "</td><td>" +
+            p05s +
+            "</td><td>" +
+            jumlah05s +
+            "</td><td>" +
+            l611s +
+            "</td><td>" +
+            p611s +
+            "</td><td>" +
+            jumlah611s +
+            "</td><td>" +
+            l1223s +
+            "</td><td>" +
+            p1223s +
+            "</td><td>" +
+            jumlah1223s +
+            "</td><td>" +
+            l2459s +
+            "</td><td>" +
+            p2459s +
+            "</td><td>" +
+            jumlah2459s +
+            "</td><td>" +
+            jumlahs +
+            "</td></tr><tr><td>3</td><td>Jumlah Bayi Ditimbang (D)</td><td>" +
+            l05d +
+            "</td><td>" +
+            p05d +
+            "</td><td>" +
+            jumlah05d +
+            "</td><td>" +
+            l611d +
+            "</td><td>" +
+            p611d +
+            "</td><td>" +
+            jumlah611d +
+            "</td><td>" +
+            l1223d +
+            "</td><td>" +
+            p1223d +
+            "</td><td>" +
+            jumlah1223d +
+            "</td><td>" +
+            l2459d +
+            "</td><td>" +
+            p2459d +
+            "</td><td>" +
+            jumlah2459d +
+            "</td><td>" +
+            jumlahd +
+            "</td></tr><tr><td rowspan='5'>4</td><td>Hasil Penimbangan Sesuai Rambu Gizi</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>N (Naik)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>T (Tidak Naik)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><tr><td>O (Bulan Lalu Tidak Datang Menimbang)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>B (Baru Pertama Kali Datang Menimbang)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>5</td><td>Jumlah Balita Bawah Garis Merah (BGM)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>6</td><td>Jumlah Balita BGM yang di Rujuk ke Puskesmas</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>7</td><td>Jumlah Balita Atas Pita Hijau (APH)</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>8</td><td>Jumlah Balita APH yang di Rujuk ke Puskesmas</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>9</td><td>Jumlah Bayi yang Tidak Naik Berat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>10</td><td>Jumlah Bayi yang Tidak Naik Berat</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table>";
+          divContainer.appendChild(table);
+
+          getData2Input(); ///////////////////
+        });
+      }
+    </script>
+  </head>
+  <body id="home">
     
-    <div style="padding-top: 125px" class="fw-bolder fs-3 text-center pb-3">
-      DATA POSYANDU KELURAHAN SEMPER TIMUR
-    </div>
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm fixed-top"
+    >
+      <div class="container">
+        <a class="navbar-brand fs-4"
+          ><img src="../img/logo.png" width="35" />&emsp;Kelurahan Semper
+          Timur</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="../Tampil/index.html">Rekapitulasi Data</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page">Form 1</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="../index.html">Logout</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    
+    <section id="projects">
+      <div class="row">
+        <div style="padding-top: 5rem" class="fw-bolder fs-3 text-center pb-3">
+          DATA POSYANDU KELURAHAN SEMPER TIMUR
+        </div>
 
     <div class="container px-4">
         <div class="row">
-          <div class="col">
+          <div class="col-md-3 mb-3">
             <div class="p-2 border bg-light">
               <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="srcht" id="srchpos">
                 <option selected>Silahkan Pilih Posyandu</option>
+                <option value="seluruh">Seluruh Posyandu Balita</option>
                 <option value="anggrek">Anggrek</option>
                 <option value="anggrek1">Anggrek 1</option>
                 <option value="anggrek2">Anggrek 2</option>
@@ -298,7 +496,7 @@
               </select>
             </div>
           </div>
-          <div class="col">
+          <div class="col-md-3 mb-3">
            <div class="p-2 border bg-light">
             <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="srchb" id="srchbulan">
               <option selected>Silahkan Pilih Bulan</option>
@@ -317,7 +515,7 @@
             </select>
            </div>
           </div>
-          <div class="col">
+          <div class="col-md-3 mb-3">
             <div class="p-2 border bg-light">
               <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="srcht" id="srchtahun">
                 <option selected>Silahkan Pilih Tahun</option>
@@ -334,7 +532,7 @@
               </select>
             </div>
           </div>
-          <div class="col-1 pt-2">
+          <div class="col-md-1 pt-2">
             <div class="">
                 <input type="button" class="btn btn-success" onclick="read_value($('#srchbulan').val(),$('#srchtahun').val(),$('#srchpos').val())" value="Tampilkan"/>
             </div>
@@ -348,6 +546,11 @@
       <footer class="text-white text-center fixed-bottom pb-1">
         <p>&copy; 2022 Kelurahan Semper Timur</p>
       </footer>
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
     </body>
   </html>
   </body>
