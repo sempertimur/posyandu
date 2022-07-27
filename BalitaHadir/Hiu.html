@@ -24,37 +24,16 @@
 
         var url = script_url + "?action=read";
         var nama = "";
-        var bb = "";
-        var usia = "";
-        var tinggi = "";
-        var rbbb = "";
-        var rbasi = "";
         var nik = document.getElementById("nikanak").value;
-        var bulan = document.getElementById("bulan").value;
-        var tahun = document.getElementById("tahun").value;
         $.getJSON(url, function (json) {
           if (nik != "") {
             for (var i = 0; i < json.records.length; i++) {
-              if (
-                nik == json.records[i].nikanak &&
-                bulan == json.records[i].bulan &&
-                tahun == json.records[i].tahun
-              ) {
+              if (nik == json.records[i].nikanak) {
                 nama = json.records[i].namaanak;
-                bb = json.records[i].bbsekarang;
-                tinggi = json.records[i].tinggisekarang;
-                rbbb = json.records[i].rbbbsekarang;
-                rbasi = json.records[i].rbasisekarang;
-                usia = json.records[i].usiasekarang;
               }
             }
           }
           document.getElementById("namaanak").value = nama;
-          document.getElementById("usiasebelum").value = usia;
-          document.getElementById("bbsebelum").value = bb;
-          document.getElementById("tinggisebelum").value = tinggi;
-          document.getElementById("rbbbsebelum").value = rbbb;
-          document.getElementById("rbasisebelum").value = rbasi;
         });
       }
     </script>
@@ -143,6 +122,7 @@
                           class="form-select form-select-sm"
                           aria-label=".form-select-sm example"
                           name="bulan"
+                          id="bulan"
                         >
                           <option selected>Silahkan Pilih Bulan</option>
                           <option value="Januari">Januari</option>
@@ -163,6 +143,7 @@
                         <select
                           class="form-select form-select-sm"
                           aria-label=".form-select-sm example"
+                          id="tahun"
                           name="tahun"
                         >
                           <option selected>Silahkan Pilih Tahun</option>
@@ -203,18 +184,6 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="usiasebelum" class="form-label"
-                    >Usia Pada Bulan Sebelumnya</label
-                  >
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="usiasebelum"
-                    aria-describedby="usiasebelum"
-                    name="usiasebelum"
-                  />
-                </div>
-                <div class="mb-3">
                   <label for="usiasekarang" class="form-label"
                     >Usia Pada Bulan Ini</label
                   >
@@ -224,18 +193,6 @@
                     id="usiasekarang"
                     aria-describedby="usiasekarang"
                     name="usiasekarang"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="bbsebelum" class="form-label"
-                    >Berat Badan Pada Bulan Sebelumnya</label
-                  >
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="bbsebelum"
-                    aria-describedby="bbsebelum"
-                    name="bbsebelum"
                   />
                 </div>
                 <div class="mb-3">
@@ -251,18 +208,6 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="tinggisebelum" class="form-label"
-                    >Tinggi Badan (cm) Pada Bulan Sebelumnya</label
-                  >
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="tinggisebelum"
-                    aria-describedby="tinggisebelum"
-                    name="tinggisebelum"
-                  />
-                </div>
-                <div class="mb-3">
                   <label for="tinggisekarang" class="form-label"
                     >Tinggi Badan (cm) Pada Bulan Ini</label
                   >
@@ -275,18 +220,6 @@
                   />
                 </div>
                 <div class="mb-3">
-                  <label for="rbbbsebelum" class="form-label"
-                    >Rambu Berat Badan (RBBB) Pada Bulan Sebelumnya</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="rbbbsebelum"
-                    aria-describedby="rbbbsebelum"
-                    name="rbbbsebelum"
-                  />
-                </div>
-                <div class="mb-3">
                   <label for="rbbbsekarang" class="form-label"
                     >Rambu Berat Badan (RBBB) Pada Bulan Ini</label
                   >
@@ -296,18 +229,6 @@
                     id="rbbbsekarang"
                     aria-describedby="rbbbsekarang"
                     name="rbbbsekarang"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="rbasisebelum" class="form-label"
-                    >Rambu Berat ASI (RB ASI) Pada Bulan Sebelumnya</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="rbasisebelum"
-                    aria-describedby="rbasisebelum"
-                    name="rbasisebelum"
                   />
                 </div>
                 <div class="mb-3">
