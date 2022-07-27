@@ -30,10 +30,16 @@
         var rbbb = "";
         var rbasi = "";
         var nik = document.getElementById("nikanak").value;
+        var bulan = document.getElementById("bulan").value;
+        var tahun = document.getElementById("tahun").value;
         $.getJSON(url, function (json) {
           if (nik != "") {
             for (var i = 0; i < json.records.length; i++) {
-              if (nik == json.records[i].nikanak) {
+              if (
+                nik == json.records[i].nikanak &&
+                bulan == json.records[i].bulan &&
+                tahun == json.records[i].tahun
+              ) {
                 nama = json.records[i].namaanak;
                 bb = json.records[i].bbsekarang;
                 tinggi = json.records[i].tinggisekarang;
