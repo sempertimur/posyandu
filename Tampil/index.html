@@ -290,6 +290,13 @@
           }
           });
        }
+       function cetak(el){
+        var restorepage = document.body.innerHTML;
+        var printcontent = document.getElementById(el).innerHTML;
+        document.body.innerHTML=printcontent;
+        window.print();
+        document.body.innerHTML=restorepage;
+      }
         </script>
         </head>
         <body id="home">
@@ -426,6 +433,9 @@
                     <div class="">
                         <input type="button" class="btn btn-success" onclick="read_value($('#srchbulan').val(),$('#srchtahun').val(),$('#srchpos').val())" value="Tampilkan"/>
                     </div>
+                  </div>
+                  <div class="col-md-1 pt-2">
+                    <input type="button" class="btn btn-success" onclick="cetak('showData')" value="Cetak"/>
                   </div>
                 </div>
                 <div class="row pt-2">

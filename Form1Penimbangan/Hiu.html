@@ -323,6 +323,13 @@
           getData2Input(); ///////////////////
         });
       }
+      function cetak(el){
+        var restorepage = document.body.innerHTML;
+        var printcontent = document.getElementById(el).innerHTML;
+        document.body.innerHTML=printcontent;
+        window.print();
+        document.body.innerHTML=restorepage;
+      }
     </script>
   </head>
   <body id="home">
@@ -418,9 +425,12 @@
                 <input type="button" class="btn btn-success" onclick="read_value($('#srchbulan').val(),$('#srchtahun').val())" value="Tampilkan"/>
             </div>
           </div>
+          <div class="col-md-1 pt-2">
+            <input type="button" class="btn btn-success" onclick="cetak('showData')" value="Cetak"/>
+          </div>
         </div>
       </div>           
-    </div> 
+    </div>  
     <div id="showData" class="table fs-6" style="padding-top: 25pt;padding-bottom: 75pt;padding-left: 10pt;padding-right: 10pt;"></div>
       </div>
     </section>
