@@ -30,10 +30,12 @@
             for (var i = 0; i < json.records.length; i++) {
               if (nik == json.records[i].nikanak) {
                 nama = json.records[i].namaanak;
+                kelamin = json.records[i].kelamin;
               }
             }
           }
           document.getElementById("namaanak").value = nama;
+          document.getElementById("kelamin").value = kelamin;
         });
       }
     </script>
@@ -172,6 +174,16 @@
                     id="namaanak"
                     aria-describedby="namaanak"
                     name="namaanak"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="kelamin" class="form-label">Jenis Kelamin</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="kelamin"
+                    aria-describedby="kelamin"
+                    name="kelamin"
                   />
                 </div>
                 <div class="mb-3">

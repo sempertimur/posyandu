@@ -16,6 +16,7 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../table2excel.js"></script>
     <style>
       table,
       td {
@@ -280,7 +281,7 @@
 
     <div class="container px-4">
         <div class="row">
-          <div class="col-md-5 mb-3">
+          <div class="col-md-4 mb-3">
            <div class="p-2 border bg-light">
             <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="srchb" id="srchbulan">
               <option selected>Silahkan Pilih Bulan</option>
@@ -299,7 +300,7 @@
             </select>
            </div>
           </div>
-          <div class="col-md-5 mb-3">
+          <div class="col-md-4 mb-3">
             <div class="p-2 border bg-light">
               <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="srcht" id="srchtahun">
                 <option selected>Silahkan Pilih Tahun</option>
@@ -322,7 +323,10 @@
             </div>
           </div>
           <div class="col-md-1 pt-2">
-            <input type="button" class="btn btn-success" onclick="cetak('showData')" value="Cetak"/>
+            <input type="button" class="btn btn-success" onclick="cetak('showData')" value="Cetak (PDF)"/>
+          </div>
+          <div class="col-md-1 pt-2 ms-2">
+            <input type="button" class="btn btn-success" onclick="exportTableToExcel('myTable','Kuntum Mekar 8 '+$('#srchbulan').val()+' '+$('#srchtahun').val())" value="Cetak (Excel)"/>
           </div>
         </div>
         <div class="row pt-2">

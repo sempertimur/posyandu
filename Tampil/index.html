@@ -16,6 +16,7 @@
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="../table2excel.js"></script>
     <style>
       table,
       td {
@@ -393,7 +394,7 @@
                       </select>
                     </div>
                   </div>
-                  <div class="col-md-3 mb-3">
+                  <div class="col-md-2 mb-3">
                    <div class="p-2 border bg-light">
                     <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="srchb" id="srchbulan">
                       <option selected>Silahkan Pilih Bulan</option>
@@ -412,7 +413,7 @@
                     </select>
                    </div>
                   </div>
-                  <div class="col-md-3 mb-3">
+                  <div class="col-md-2 mb-3">
                     <div class="p-2 border bg-light">
                       <select class="form-select form-select-sm" aria-label=".form-select-sm example" name="srcht" id="srchtahun">
                         <option selected>Silahkan Pilih Tahun</option>
@@ -429,13 +430,16 @@
                       </select>
                     </div>
                   </div>
-                  <div class="col-1 pt-2">
+                  <div class="col-md-1 pt-2">
                     <div class="">
                         <input type="button" class="btn btn-success" onclick="read_value($('#srchbulan').val(),$('#srchtahun').val(),$('#srchpos').val())" value="Tampilkan"/>
                     </div>
                   </div>
                   <div class="col-md-1 pt-2">
-                    <input type="button" class="btn btn-success" onclick="cetak('showData')" value="Cetak"/>
+                    <input type="button" class="btn btn-success" onclick="cetak('showData')" value="Cetak (PDF)"/>
+                  </div>
+                  <div class="col-md-1 pt-2 ms-2">
+                    <input type="button" class="btn btn-success" onclick="exportTableToExcel('myTable',$('#srchpos').val()+' '+$('#srchbulan').val()+' '+$('#srchtahun').val())" value="Cetak (Excel)"/>
                   </div>
                 </div>
                 <div class="row pt-2">
